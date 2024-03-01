@@ -1,0 +1,66 @@
+crearea unei simulari a unei fleet of robots (multime/flota de roboti)
+scop: generare puncte intr-o secventa de runde
+
+You are managing 10000 robots
+Each robot:
+
+unique serial number : int/string
+an activation round  : int  1->30
+a deactivation round : int  30->60
+an active state      : bool 
+a health state       : bool / default true 
+a task to generate points
+
+In the beginning of the simulation each robot will be assigned an activation round as a random number between 1 and 30, and a deactivation round as a random number between 30 and 60. When a robot reaches its activation round it becomes active; when it reaches its deactivation round, it becomes inactive.
+
+
+Each active robot generates 1 point per round if healthy after performing a workload. 
+A workload consists in generating a number between 1 and 100. 
+If the value is below or equal to 90 the point is generated. 
+If the value is above 90 then the robot becomes unhealthy instead. 
+Until repaired, an active, unhealthy robot generates negative points, -10 per round. 
+
+
+The robots cannot fix themselves. They can only be repaired by a fleet of controllers. 
+A controller can monitor a range of robots and repair the unhealthy ones. 
+A robot doesn’t know about the controller but the controller knows about robots. ->controller-ul are un vector de roboti in el
+A controller is limited to 100 robot interactions (read robot active status, read robot health status, repair robot) per round. 
+Each round, a controller also consumes 20 points for its own effort. 
+
+
+
+The controllers’ fleet has the following characteristics:
+->Controllers do not know about each other 
+->Controllers are not directly reachable but are managed from a command center that contains the list of serial numbers of the robots through which a certain controller can interact with a certain robot. : dictionary/hashmap
+->The only permitted interactions for the controller are these 3: read robot active status, read robot health status, repair robot
+
+
+
+The command center knows:
+->Total number of robots, not the robot details
+->List of controllers 
+
+
+Your mission is to generate a minimum of 50000 points in 60 rounds
+
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+se imbolnaveste un robot
+fac o list cu 
+[ids_robot_bolnav]
+
+lista o pasez la command center:
+[efic: daca un controller e chemat sa repare un anumit robot, pai el se uita prin toata lista lui de roboti si repara cat de multi poate]
+
+
+
+
+
+
+
+
+
+
+
