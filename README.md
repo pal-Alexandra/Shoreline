@@ -18,4 +18,4 @@ I design the classes taking into account the relationships induced by the requir
 
 ## Algorithm
 
-In order to gain as many points as I can, for each round I keep track of the serial numbers of the unhealthy robots. In that way, when I call the commandCenter to repair robots, this  will call only those controllers that have robots that are unhealthy and, more in order to consume as few points as possible  , it is made only one call for a controller to repair as many robots as it can, of those it monitors
+In order to gain as many points as I can, for each round I keep track of the serial numbers of the unhealthy robots. In that way, when I call the commandCenter to repair robots, this  will call only those controllers that have robots that are unhealthy and, more, in order to consume as few points as possible , it is made only one call for a controller to repair as many robots as it can, of those it monitors
